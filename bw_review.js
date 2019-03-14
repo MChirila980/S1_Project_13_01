@@ -5,8 +5,8 @@
    Tutorial 11
    Case Problem 1
 
-   Author: 
-   Date:   
+   Author: Melinda Chirila
+   Date:   3/14/2019
    
    Filename: bw_review.js
 	
