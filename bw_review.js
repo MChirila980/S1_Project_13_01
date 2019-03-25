@@ -69,7 +69,7 @@ function lightStars() {
 }
 
 function turnOffStars() {
-      var stars = document.querySelectorAll("span#stars")
+      var stars = document.querySelectorAll("span#stars img") 
 }
 
 
