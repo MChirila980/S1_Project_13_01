@@ -35,17 +35,48 @@
 */
 
 
+window.onload = init();
 
-  
+//
+
+function init() {
+      var stars = document.querySelectionAll("span#stars img");
+      for (var i = 0; i < stars.length; i++) {
+            stars[i].style.cursor = "pointer";
+            stars[i].addEventListener('mouseenter', lightStars);
+      }
+      document.getElementById("comment").addEventListener("keyup", updateCOunt);
+}
+
+//
+
+function lightStars() {
+      var startNumber = event.target.alt;
+      var stars = document.querySelectorAll("span#stars img")
+      for (var i = 0; i < startNumber; i++) {
+            stars[i].scr = "bw_star2.png";
+      };
+
+      for (var i = startNumber; i < 5; i++) {
+            stars[i].scr = "bw_star.png";
+      };
+
+      ducument.getElementById("rating").value = startNumber + "stars";
+      event.target.addEventListener("mouseLeave", turnOffStars);
+      event.target.addEventListener("click", function () {
+            event.target.removeEventListener("mouseLeave", turnOffStars);
+      })
+}
+
+function turnOffStars() {
+      var stars = document.querySelectorAll("span#stars")
+}
 
 
-  
-  
-  
 /*=================================================================*/
 
 function countCharacters(textStr) {
-   var commentregx = /\s/g;
-   var chars = textStr.replace(commentregx, "");
-   return chars.length;
-}   
+      var commentregx = /\s/g;
+      var chars = textStr.replace(commentregx, "");
+      return chars.length;
+}
